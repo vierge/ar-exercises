@@ -8,4 +8,16 @@ require_relative './exercise_5'
 puts "Exercise 6"
 puts "----------"
 
-# Your code goes here ...
+class Store 
+  has_many :employees
+end
+
+class Employee 
+  belongs_to :store
+end
+
+@store1.employees.create(first_name: "Mara", last_name: "Gray", hourly_rate: 69)
+
+mara = @store1.employees.where(first_name: "Mara")
+
+pp mara
